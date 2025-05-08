@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Player History</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .match {
+      background: white;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <h2 id="player-name">Player</h2>
+  <div id="history-list">Loading...</div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const playerId = parseInt(urlParams.get('id'));
+
+    Promise.all([
+      fetch('players.json').then(res => res.json()),
+      fetch('history.json').then(res => res.json())
+    ]).then(([playersData, historyData]) => {
+      const player = playersData.players.find(p => p.id === playerId);
+      if (!player) {
+        document.getElementById('history-list').textContent = 'Player not found.';
+        return;
+      }
+
+      document.getElementById('player-name').textContent = `${player.name} - Elo: ${player.elo}`;
+
+      const matches = historyData.matches.filter(m => player.history.includes(m.id));
+      const container = document.getElementById('history-list');
+      container.innerHTML = '';
+
+      matches.forEach(match => {
+        const result = match.winner === 'A'
+          ? match.teamA.includes(playerId) ? 'Win' : 'Loss'
+          : match.teamB.includes(playerId) ? 'Win' : 'Loss';
+
+        const eloChange = match.eloChanges[playerId] ?? 0;
+        const div = document.createElement('div');
+        div.className = 'match';
+        div.innerHTML = `
+          <strong>Match ${match.id}</strong> (${new Date(match.timestamp).toLocaleString()})<br>
+          Result: <strong>${result}</strong><br>
+          Elo Change: <span style="color:${eloChange >= 0 ? 'green' : 'red'}">${eloChange}</span><br>
+          Opponents: ${match.teamA.includes(playerId) ? match.teamB.join(', ') : match.teamA.join(', ')}
+        `;
+        container.appendChild(div);
+      });
+
+      if (matches.length === 0) {
+        container.textContent = 'No match history.';
+      }
+    });
+  </script>
+</body>
+</html>
