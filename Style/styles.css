@@ -175,3 +175,12 @@ body {
   padding: 6px 10px;
   font-size: 14px;
 }
+
+.h2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+}
+  

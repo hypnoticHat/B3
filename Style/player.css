@@ -1,44 +1,92 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    padding: 20px;
-  }
+font-family: Arial, sans-serif;
+background-color: #f9f9f9;
+padding: 30px;
+margin: 0;
+}
 
-  h2 {
+#history-list {
+max-width: 1000px;
+margin: 0 auto;
+}
+
+.match {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 30px;
+margin-bottom: 30px;
+padding: 20px;
+border-radius: 10px;
+background-color: #fff;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+transition: box-shadow 0.3s ease;
+}
+
+.match:hover {
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.team {
+display: flex;
+flex-direction: column;
+flex: 0 0 30%;
+padding: 15px;
+border-radius: 8px;
+}
+
+.team.win {
+background-color: #e6f9e6;
+}
+
+.team.lose {
+background-color: #ffe6e6;
+}
+
+.match-info {
+text-align: center;
+flex: 1;
+padding: 15px 20px;
+font-size: 14px;
+color: #333;
+background-color: #f2f7ff; /* Nền xanh nhạt dịu */
+border-radius: 8px;
+box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.05);
+margin: 0 10px;
+line-height: 1.6;
+}
+.match-info:hover {
+background-color: #e6efff;
+}
+
+
+.team-title {
+font-weight: bold;
+margin-bottom: 10px;
+font-size: 15px;
+color: #444;
+}
+
+.player {
+background: #e0e0e0;
+border-radius: 6px;
+padding: 8px 12px;
+margin: 5px 0;
+font-size: 13px;
+}
+
+.player:hover {
+background: #d5d5d5;
+}
+
+.player.highlight {
+background-color: #cce5ff;
+font-weight: bold;
+border-left: 4px solid #3399ff;
+}
+#player-header {
     text-align: center;
-  }
-
-  .match {
-    background: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  }
-
-  .team {
-    margin-top: 10px;
-  }
-
-  .player {
-    display: inline-block;
-    margin: 4px;
-    padding: 6px 10px;
-    border-radius: 4px;
-    background: #eee;
-    font-size: 14px;
-  }
-
-  .mvp {
-    font-weight: bold;
-    color: gold;
-  }
-
-  .svp {
-    font-weight: bold;
-    color: teal;
-  }
-
-  .highlight {
-    background-color: #d1f0d1 !important;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
   }

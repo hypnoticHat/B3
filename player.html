@@ -37,13 +37,25 @@
 
           const teamAHTML = match.teamA.map(id => renderPlayer(id, match.players[id])).join('');
           const teamBHTML = match.teamB.map(id => renderPlayer(id, match.players[id])).join('');
+          const isTeamAWinner = match.winner === 'A';
+        const teamAClass = isTeamAWinner ? 'team win' : 'team lose';
+        const teamBClass = !isTeamAWinner ? 'team win' : 'team lose';
 
-          div.innerHTML = `
-            <strong>Match ${match.id}</strong> (${new Date(match.timestamp).toLocaleString()})<br>
-            Winner: <strong>Team ${match.winner}</strong><br>
-            <div class="team"><strong>Team A:</strong><br>${teamAHTML}</div>
-            <div class="team"><strong>Team B:</strong><br>${teamBHTML}</div>
-          `;
+        div.innerHTML = `
+          <div class="${teamAClass}">
+            <div class="team-title">Team A</div>
+            ${teamAHTML}
+          </div>
+          <div class="match-info">
+            <strong>Match ${match.id}</strong><br>
+            ${new Date(match.timestamp).toLocaleString()}<br>
+            Winner: <strong>Team ${match.winner}</strong>
+          </div>
+          <div class="${teamBClass}">
+            <div class="team-title">Team B</div>
+            ${teamBHTML}
+          </div>
+        `;
 
           container.appendChild(div);
         });
