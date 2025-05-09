@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Player Rankings</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Player Rankings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Style/styles.css">
 </head>
 <body>
-  <div class="ranking-container">
-    <h2>Player Rankings</h2>
-    <div id="ranking-list"></div>
+  <div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <div class="simulate-box">
+        <input type="number" id="matchCount" placeholder="Số trận mô phỏng" value="10" min="1">
+        <button onclick="simulateMatches()">Chạy mô phỏng</button>
+        <button onclick="saveSimulation()">Lưu mô phỏng</button>
+      </div>
+      <div id="history-container">
+        <h3>Lịch sử Mô phỏng</h3>
+        <div id="simulate-result"></div>
+        <div id="history-list"></div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <h2>Player Rankings</h2>
+      <div class="ranking-controls">
+        <div class="search-box">
+          <input type="text" id="searchBox" placeholder="Tìm theo tên hoặc ID..." />
+          <button onclick="filterPlayers()">Tìm</button>
+        </div>
+        <div class="filter-box">
+          <label for="filter">Hiển thị:</label>
+          <select id="filter" onchange="applyFilter()">
+            <option value="10">Top 10</option>
+            <option value="20">Top 20</option>
+            <option value="50">Top 50</option>
+            <option value="all">Tất cả</option>
+          </select>
+        </div>
+      </div>
+      <div id="ranking-list"></div>
+      <div id="pagination"></div>
+    </div>
   </div>
 
-  <script>
-    fetch('players.json')
-      .then(res => res.json())
-      .then(data => {
-        const sorted = data.players.sort((a, b) => b.elo - a.elo);
-        const list = document.getElementById('ranking-list');
-        sorted.forEach((player, index) => {
-          const div = document.createElement('div');
-          div.className = 'player';
-          div.innerHTML = `
-            <span>${index + 1}</span>
-            <span class="pname"><a href="player.html?id=${player.id}">${player.name}</a></span>
-            <span>${player.elo}</span>
-          `;
-          list.appendChild(div);
-        });
-      });
-  </script>
+  <!-- Script Modules -->
+  <script src="./Scripts/simulate.js"></script>
+  <script src="./Scripts/history.js"></script>
+  <script src="./Scripts/rankings.js"></script>
 </body>
 </html>

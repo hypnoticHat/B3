@@ -1,0 +1,177 @@
+/* Toàn trang */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container 2 cột */
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.left-panel {
+  flex: 1.2;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-height: 90vh;
+  min-width: 50%;
+  overflow-y: auto;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.right-panel {
+  flex: 1.8;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* Lịch sử mô phỏng */
+#history-container h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.history-entry {
+  background: #f9f9f9;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border-left: 4px solid #007acc;
+}
+
+/* Mô phỏng */
+.simulate-box {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.simulate-box input,
+.simulate-box button {
+  padding: 8px 12px;
+  margin-right: 6px;
+  font-size: 15px;
+}
+
+#simulate-result {
+  margin-top: 10px;
+  background: #eef7ff;
+  border-left: 4px solid #007acc;
+  padding: 10px;
+  white-space: pre-wrap;
+  font-family: monospace;
+}
+
+/* Rankings */
+#ranking-list {
+  margin-top: 20px;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.player .pname a {
+  text-decoration: none;
+  color: #007acc;
+}
+
+.player .elo {
+  font-weight: bold;
+  color: #333;
+}
+
+.ranking-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#ranking-list .player {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+#pagination {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#pagination button {
+  margin: 0 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.player {
+  background: #eee;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 4px;
+  min-width: 60px;
+  display: inline-block;
+  font-size: 13px;
+}
+.team {
+  margin-top: 8px;
+  display: flex;
+}
+
+/* home button */
+
+.ranking-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#filter {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 6px 10px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.search-box button {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.filter-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#filter {
+  padding: 6px 10px;
+  font-size: 14px;
+}
