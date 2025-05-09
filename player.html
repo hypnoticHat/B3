@@ -2,70 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Player History</title>
+  <title>Player Match History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f7f7f7;
       padding: 20px;
-      background: #f2f2f2;
     }
+
     h2 {
-      margin-bottom: 10px;
+      text-align: center;
     }
+
     .match {
       background: white;
-      border-radius: 6px;
-      padding: 10px;
-      margin-bottom: 10px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    }
+
+    .team {
+      margin-top: 10px;
+    }
+
+    .player {
+      display: inline-block;
+      margin: 4px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      background: #eee;
+      font-size: 14px;
+    }
+
+    .mvp {
+      font-weight: bold;
+      color: gold;
+    }
+
+    .svp {
+      font-weight: bold;
+      color: teal;
+    }
+
+    .highlight {
+      background-color: #d1f0d1 !important;
     }
   </style>
 </head>
 <body>
-  <h2 id="player-name">Player</h2>
+  <h2 id="player-header">Player History</h2>
   <div id="history-list">Loading...</div>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const playerId = parseInt(urlParams.get('id'));
 
-    Promise.all([
-      fetch('players.json').then(res => res.json()),
-      fetch('history.json').then(res => res.json())
-    ]).then(([playersData, historyData]) => {
-      const player = playersData.players.find(p => p.id === playerId);
-      if (!player) {
-        document.getElementById('history-list').textContent = 'Player not found.';
-        return;
-      }
+    document.getElementById('player-header').textContent = `Player ${playerId} Match History`;
 
-      document.getElementById('player-name').textContent = `${player.name} - Elo: ${player.elo}`;
+    fetch('history.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('history-list');
+        container.innerHTML = '';
 
-      const matches = historyData.matches.filter(m => player.history.includes(m.id));
-      const container = document.getElementById('history-list');
-      container.innerHTML = '';
+        const matches = data.matches.filter(
+          match => match.teamA.includes(playerId) || match.teamB.includes(playerId)
+        );
 
-      matches.forEach(match => {
-        const result = match.winner === 'A'
-          ? match.teamA.includes(playerId) ? 'Win' : 'Loss'
-          : match.teamB.includes(playerId) ? 'Win' : 'Loss';
+        if (matches.length === 0) {
+          container.textContent = "No match history found.";
+          return;
+        }
 
-        const eloChange = match.eloChanges[playerId] ?? 0;
-        const div = document.createElement('div');
-        div.className = 'match';
-        div.innerHTML = `
-          <strong>Match ${match.id}</strong> (${new Date(match.timestamp).toLocaleString()})<br>
-          Result: <strong>${result}</strong><br>
-          Elo Change: <span style="color:${eloChange >= 0 ? 'green' : 'red'}">${eloChange}</span><br>
-          Opponents: ${match.teamA.includes(playerId) ? match.teamB.join(', ') : match.teamA.join(', ')}
-        `;
-        container.appendChild(div);
+        matches.forEach(match => {
+          const div = document.createElement('div');
+          div.className = 'match';
+
+          const teamAHTML = match.teamA.map(id => renderPlayer(id, match.players[id])).join('');
+          const teamBHTML = match.teamB.map(id => renderPlayer(id, match.players[id])).join('');
+
+          div.innerHTML = `
+            <strong>Match ${match.id}</strong> (${new Date(match.timestamp).toLocaleString()})<br>
+            Winner: <strong>Team ${match.winner}</strong><br>
+            <div class="team"><strong>Team A:</strong><br>${teamAHTML}</div>
+            <div class="team"><strong>Team B:</strong><br>${teamBHTML}</div>
+          `;
+
+          container.appendChild(div);
+        });
+
+        function renderPlayer(id, data) {
+          if (!data) return `<div class="player">Unknown</div>`;
+
+          const isMVP = data.isMVP ? '⭐' : '';
+          const isSVP = data.isSVP ? '🛡️' : '';
+          const kda = `${data.stats.kills}/${data.stats.deaths}/${data.stats.assists}`;
+          const gold = data.stats.gold;
+          const elo = data.eloChange;
+          const eloColor = elo >= 0 ? 'green' : 'red';
+
+          return `
+            <div class="player ${id === playerId ? 'highlight' : ''}">
+              <strong>ID ${id}</strong> ${isMVP}${isSVP}<br>
+              KDA: ${kda} | Gold: ${gold}<br>
+              Elo: <span style="color:${eloColor}">${elo >= 0 ? '+' : ''}${elo}</span>
+            </div>
+          `;
+        }
       });
-
-      if (matches.length === 0) {
-        container.textContent = 'No match history.';
-      }
-    });
   </script>
 </body>
 </html>

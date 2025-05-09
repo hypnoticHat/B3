@@ -2,73 +2,657 @@
   "matches": [
     {
       "id": 1,
-      "timestamp": "2025-05-08T09:44:54.825Z",
+      "timestamp": "2025-05-09T02:31:31.127Z",
       "teamA": [
-        21,
-        27,
-        41,
-        56,
-        81
-      ],
-      "teamB": [
-        15,
-        22,
-        55,
-        44,
-        77
-      ],
-      "winner": "A",
-      "eloChanges": {}
-    },
-    {
-      "id": 2,
-      "timestamp": "2025-05-08T09:50:16.544Z",
-      "teamA": [
-        46,
-        29,
-        30,
-        89,
-        38
-      ],
-      "teamB": [
-        4,
-        24,
-        7,
-        3,
-        32
-      ],
-      "winner": "A",
-      "eloChanges": {}
-    },
-    {
-      "id": 3,
-      "timestamp": "2025-05-08T09:51:17.359Z",
-      "teamA": [
-        82,
-        75,
-        77,
         52,
-        90
+        79,
+        17,
+        53,
+        77
       ],
       "teamB": [
         57,
-        1,
-        80,
-        59,
-        38
+        96,
+        38,
+        35,
+        15
       ],
       "winner": "A",
-      "eloChanges": {
-        "1": -16,
-        "38": -16,
-        "52": 16,
-        "57": -16,
-        "59": -16,
-        "75": 16,
-        "77": 16,
-        "80": -16,
-        "82": 16,
-        "90": 16
+      "players": {
+        "15": {
+          "eloChange": -18,
+          "isMVP": false,
+          "isSVP": true,
+          "stats": {
+            "kills": 4,
+            "deaths": 0,
+            "assists": 1,
+            "gold": 13421
+          }
+        },
+        "17": {
+          "eloChange": 16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 9,
+            "deaths": 2,
+            "assists": 1,
+            "gold": 14386
+          }
+        },
+        "35": {
+          "eloChange": -15,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 1,
+            "deaths": 9,
+            "assists": 8,
+            "gold": 15611
+          }
+        },
+        "38": {
+          "eloChange": -15,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 1,
+            "deaths": 6,
+            "assists": 0,
+            "gold": 5890
+          }
+        },
+        "52": {
+          "eloChange": 20,
+          "isMVP": true,
+          "isSVP": false,
+          "stats": {
+            "kills": 11,
+            "deaths": 1,
+            "assists": 7,
+            "gold": 14858
+          }
+        },
+        "53": {
+          "eloChange": 15,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 12,
+            "deaths": 9,
+            "assists": 6,
+            "gold": 10544
+          }
+        },
+        "57": {
+          "eloChange": -16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 14,
+            "deaths": 7,
+            "assists": 15,
+            "gold": 5176
+          }
+        },
+        "77": {
+          "eloChange": 15,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 0,
+            "deaths": 8,
+            "assists": 17,
+            "gold": 15412
+          }
+        },
+        "79": {
+          "eloChange": 15,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 3,
+            "deaths": 8,
+            "assists": 10,
+            "gold": 18404
+          }
+        },
+        "96": {
+          "eloChange": -15,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 2,
+            "deaths": 2,
+            "assists": 4,
+            "gold": 9409
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "timestamp": "2025-05-09T02:53:46.662Z",
+      "teamA": [
+        17,
+        74,
+        81,
+        65,
+        23
+      ],
+      "teamB": [
+        42,
+        25,
+        83,
+        11,
+        32
+      ],
+      "winner": "A",
+      "players": {
+        "11": {
+          "eloChange": -16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 6,
+            "deaths": 9,
+            "assists": 15,
+            "gold": 11552
+          }
+        },
+        "17": {
+          "eloChange": 22,
+          "isMVP": true,
+          "isSVP": false,
+          "stats": {
+            "kills": 6,
+            "deaths": 2,
+            "assists": 10,
+            "gold": 9875
+          }
+        },
+        "23": {
+          "eloChange": 16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 4,
+            "deaths": 6,
+            "assists": 3,
+            "gold": 9696
+          }
+        },
+        "25": {
+          "eloChange": -18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 10,
+            "deaths": 3,
+            "assists": 11,
+            "gold": 6625
+          }
+        },
+        "32": {
+          "eloChange": -17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 3,
+            "deaths": 9,
+            "assists": 11,
+            "gold": 15343
+          }
+        },
+        "42": {
+          "eloChange": -21,
+          "isMVP": false,
+          "isSVP": true,
+          "stats": {
+            "kills": 10,
+            "deaths": 2,
+            "assists": 7,
+            "gold": 16232
+          }
+        },
+        "65": {
+          "eloChange": 18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 4,
+            "deaths": 3,
+            "assists": 8,
+            "gold": 5231
+          }
+        },
+        "74": {
+          "eloChange": 18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 10,
+            "deaths": 7,
+            "assists": 13,
+            "gold": 10947
+          }
+        },
+        "81": {
+          "eloChange": 17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 8,
+            "deaths": 9,
+            "assists": 1,
+            "gold": 15165
+          }
+        },
+        "83": {
+          "eloChange": -17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 0,
+            "deaths": 5,
+            "assists": 6,
+            "gold": 16423
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "timestamp": "2025-05-09T06:09:32.335Z",
+      "teamA": [
+        74,
+        38,
+        90,
+        83,
+        54
+      ],
+      "teamB": [
+        97,
+        46,
+        44,
+        5,
+        69
+      ],
+      "winner": "A",
+      "players": {
+        "5": {
+          "eloChange": -18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 13,
+            "deaths": 9,
+            "assists": 17,
+            "gold": 8965
+          }
+        },
+        "38": {
+          "eloChange": 23,
+          "isMVP": true,
+          "isSVP": false,
+          "stats": {
+            "kills": 11,
+            "deaths": 8,
+            "assists": 18,
+            "gold": 17990
+          }
+        },
+        "44": {
+          "eloChange": -17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 7,
+            "deaths": 9,
+            "assists": 17,
+            "gold": 18824
+          }
+        },
+        "46": {
+          "eloChange": -20,
+          "isMVP": false,
+          "isSVP": true,
+          "stats": {
+            "kills": 8,
+            "deaths": 2,
+            "assists": 4,
+            "gold": 14180
+          }
+        },
+        "54": {
+          "eloChange": 16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 2,
+            "deaths": 7,
+            "assists": 16,
+            "gold": 7388
+          }
+        },
+        "69": {
+          "eloChange": -18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 6,
+            "deaths": 3,
+            "assists": 5,
+            "gold": 7990
+          }
+        },
+        "74": {
+          "eloChange": 17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 1,
+            "deaths": 3,
+            "assists": 4,
+            "gold": 16787
+          }
+        },
+        "83": {
+          "eloChange": 18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 14,
+            "deaths": 8,
+            "assists": 11,
+            "gold": 8454
+          }
+        },
+        "90": {
+          "eloChange": 16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 8,
+            "deaths": 9,
+            "assists": 3,
+            "gold": 8007
+          }
+        },
+        "97": {
+          "eloChange": -18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 6,
+            "deaths": 6,
+            "assists": 13,
+            "gold": 12027
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "timestamp": "2025-05-09T06:09:37.406Z",
+      "teamA": [
+        92,
+        47,
+        14,
+        41,
+        68
+      ],
+      "teamB": [
+        70,
+        94,
+        2,
+        49,
+        80
+      ],
+      "winner": "A",
+      "players": {
+        "2": {
+          "eloChange": -16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 14,
+            "deaths": 6,
+            "assists": 3,
+            "gold": 17941
+          }
+        },
+        "14": {
+          "eloChange": 16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 0,
+            "deaths": 8,
+            "assists": 8,
+            "gold": 15056
+          }
+        },
+        "41": {
+          "eloChange": 22,
+          "isMVP": true,
+          "isSVP": false,
+          "stats": {
+            "kills": 13,
+            "deaths": 1,
+            "assists": 7,
+            "gold": 17710
+          }
+        },
+        "47": {
+          "eloChange": 18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 5,
+            "deaths": 3,
+            "assists": 16,
+            "gold": 18840
+          }
+        },
+        "49": {
+          "eloChange": -18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 14,
+            "deaths": 2,
+            "assists": 16,
+            "gold": 17942
+          }
+        },
+        "68": {
+          "eloChange": 17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 14,
+            "deaths": 5,
+            "assists": 13,
+            "gold": 7166
+          }
+        },
+        "70": {
+          "eloChange": -16,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 6,
+            "deaths": 4,
+            "assists": 3,
+            "gold": 16758
+          }
+        },
+        "80": {
+          "eloChange": -17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 1,
+            "deaths": 3,
+            "assists": 12,
+            "gold": 12062
+          }
+        },
+        "92": {
+          "eloChange": 17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 13,
+            "deaths": 6,
+            "assists": 13,
+            "gold": 9984
+          }
+        },
+        "94": {
+          "eloChange": -20,
+          "isMVP": false,
+          "isSVP": true,
+          "stats": {
+            "kills": 13,
+            "deaths": 1,
+            "assists": 3,
+            "gold": 19323
+          }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "timestamp": "2025-05-09T06:09:43.097Z",
+      "teamA": [
+        31,
+        22,
+        74,
+        47,
+        68
+      ],
+      "teamB": [
+        46,
+        79,
+        82,
+        7,
+        52
+      ],
+      "winner": "B",
+      "players": {
+        "7": {
+          "eloChange": 17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 4,
+            "deaths": 2,
+            "assists": 2,
+            "gold": 7366
+          }
+        },
+        "22": {
+          "eloChange": -19,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 3,
+            "deaths": 5,
+            "assists": 18,
+            "gold": 10533
+          }
+        },
+        "31": {
+          "eloChange": -21,
+          "isMVP": false,
+          "isSVP": true,
+          "stats": {
+            "kills": 9,
+            "deaths": 0,
+            "assists": 17,
+            "gold": 10505
+          }
+        },
+        "46": {
+          "eloChange": 24,
+          "isMVP": true,
+          "isSVP": false,
+          "stats": {
+            "kills": 11,
+            "deaths": 0,
+            "assists": 11,
+            "gold": 15261
+          }
+        },
+        "47": {
+          "eloChange": -17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 9,
+            "deaths": 7,
+            "assists": 3,
+            "gold": 11760
+          }
+        },
+        "52": {
+          "eloChange": 17,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 14,
+            "deaths": 9,
+            "assists": 13,
+            "gold": 7337
+          }
+        },
+        "68": {
+          "eloChange": -19,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 1,
+            "deaths": 0,
+            "assists": 12,
+            "gold": 9255
+          }
+        },
+        "74": {
+          "eloChange": -18,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 9,
+            "deaths": 8,
+            "assists": 9,
+            "gold": 16175
+          }
+        },
+        "79": {
+          "eloChange": 19,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 5,
+            "deaths": 4,
+            "assists": 12,
+            "gold": 8468
+          }
+        },
+        "82": {
+          "eloChange": 19,
+          "isMVP": false,
+          "isSVP": false,
+          "stats": {
+            "kills": 14,
+            "deaths": 0,
+            "assists": 8,
+            "gold": 13219
+          }
+        }
       }
     }
   ]
