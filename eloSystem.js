@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-// ================= File & Dữ liệu ================= //
+// ================= File and data ================= //
 
 function loadPlayers() {
   const rawData = fs.readFileSync('players.json');
@@ -24,7 +24,7 @@ function saveHistory(history) {
   fs.writeFileSync('history.json', JSON.stringify(history, null, 2));
 }
 
-// ================= Trận đấu ================= //
+// ================= generate match ================= //
 
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
@@ -104,7 +104,7 @@ function calculateK(player) {
 }
 
 
-// ================= Tính toán kết quả ================= //
+// ================= cacula resultresult ================= //
 function randomResult(expectedA) {
   return Math.random() < expectedA ? 1 : 0;
 }
@@ -112,20 +112,20 @@ function randomResult(expectedA) {
 function applyMatchResult(teamA, teamB, resultA, matchId, expectedA) {
   const expectedB = 1 - expectedA;
 
-  // Tính stats, mvp, svp
+  // stats, mvp, svp
   assignStatsAndVPs(teamA, teamB, resultA === 1 ? 'A' : 'B');
 
   const matchStats = {};
   [...teamA, ...teamB].forEach(p => {
     matchStats[p.id] = {
-      eloChange: 0, // sẽ cập nhật ở dưới
+      eloChange: 0, //update belowbelow
       isMVP: !!p.isMVP,
       isSVP: !!p.isSVP,
       stats: p.stats
     };
   });
 
-  // Cập nhật Elo và ghi vào matchStats
+  // update update Elo -> save to matchStats
   teamA.forEach(p => {
     const k = calculateK(p);
     const delta = Math.round(k * (resultA - expectedA));
