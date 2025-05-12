@@ -28,4 +28,4 @@ If KDA > 3         => K += 4
 If gold is high    => K += 2  
 If MVP             => +8 Elo  
 If SVP             => +4 Elo
-- Random KDA Generation (Biased by Expectancy)
+- Random KDA Generation
