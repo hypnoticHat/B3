@@ -29,6 +29,3 @@ If gold is high    => K += 2
 If MVP             => +8 Elo  
 If SVP             => +4 Elo
 - Random KDA Generation (Biased by Expectancy)
-
-KDA (Kills, Deaths, Assists) is randomly generated per player but influenced by their team’s win expectancy (`E`):
-
